@@ -1,14 +1,14 @@
 // module imports
-import express, { Request, Response } from 'express';
 import cors from 'cors';
-import path from 'path';
+import express, { Request, Response } from 'express';
 import logger from 'morgan';
+import path from 'path';
 
 // file imports
-import './config/env-config';
-import connectDB from './config/db';
-import errorHandler from './middlewares/error-handler';
-import indexRouter from './routes';
+import connectDB from './src/config/db';
+import './src/config/env-config';
+import errorHandler from './src/middlewares/error-handler';
+import indexRouter from './src/routes';
 
 // variable initializations
 const app = express();

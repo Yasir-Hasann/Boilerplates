@@ -5,10 +5,10 @@ const path = require('path');
 const morgan = require('morgan');
 
 // file imports
-require('./config/env-config');
-const connectDB = require('./config/db');
-const apiRouter = require('./routes');
-const errorHandler = require('./middlewares/error-handler');
+require('./src/config/env-config');
+const connectDB = require('./src/config/db');
+const apiRouter = require('./src/routes');
+const errorHandler = require('./src/middlewares/error-handler');
 
 // variable initializations
 const app = express();
