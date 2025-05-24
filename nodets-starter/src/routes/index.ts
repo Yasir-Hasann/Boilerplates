@@ -1,12 +1,12 @@
 // module imports
-import express from 'express';
+import { Router } from 'express';
 
 // file imports
-import test from './testRoute';
+import nameRoutes from './nameRoutes.js';
 
-// variable initializations
-const router = express.Router();
+// variable initialization
+const router = Router();
 
-router.use('/test', test);
+router.use('/data', nameRoutes);
 
 export default router;

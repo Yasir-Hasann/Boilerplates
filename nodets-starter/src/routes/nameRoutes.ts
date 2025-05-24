@@ -1,11 +1,14 @@
 // module imports
-const router = require('express').Router();
+import { Router } from 'express';
 
 // file imports
-const nameController = require('../controllers/nameController');
+import * as nameController from '../controllers/nameController.js';
+
+// variable initialization
+const router = Router();
 
 router.route('/').get(nameController.getData).post(nameController.addData);
 router.route('/:id').get(nameController.getSingleData);
 router.route('/:id').patch(nameController.updateData).delete(nameController.deleteData);
 
-module.exports = router;
+export default router;

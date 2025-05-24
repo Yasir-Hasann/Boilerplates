@@ -1,24 +1,51 @@
 {
   "name": "nodejs-starter",
   "version": "1.0.0",
-  "description": "Backend Boilerplate",
+  "description": "NodeJS Starter",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "prepare": "husky",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "npm run lint -- --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "boilerplate",
+    "starter"
+  ],
   "author": "<https://github.com/Yasir-Hasann>",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
+    "chalk": "^4.1.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "express-async-handler": "^1.2.0",
-    "mongoose": "^8.3.3",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.15.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

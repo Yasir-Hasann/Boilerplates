@@ -1,35 +1,67 @@
 {
   "name": "nodets-starter",
   "version": "1.0.0",
-  "description": "Backend API",
-  "main": "./dist/server.js",
+  "description": "NodeTS Starter",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node ./dist/server.js",
-    "start:prod": "node ./dist/server.prod.js",
+    "start": "node dist/server.js",
+    "dev": "concurrently \"npx tsc -w\" \"nodemon ./dist/server.js\"",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/public/*.* dist/",
     "build": "npm run clean && npx tsc && npm run copy-files",
     "build:start": "npm run build && npm run start",
-    "dev": "concurrently \"npx tsc -w\"  \"nodemon ./dist/server.js\""
+    "prepare": "husky",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix"
   },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "boilerplate",
+    "starter"
+  ],
   "author": "<https://github.com/Yasir-Hasann>",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
+    "chalk": "^5.4.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "express-async-handler": "^1.2.0",
-    "mongoose": "^8.3.3",
-    "morgan": "^1.10.0",
-    "typescript": "*"
+    "helmet": "^8.1.0",
+    "mongoose": "^8.15.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^20.11.16",
+    "@types/node": "^22.15.21",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "concurrently": "^8.2.2",
     "copyfiles": "^2.4.1",
-    "rimraf": "^5.0.5"
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

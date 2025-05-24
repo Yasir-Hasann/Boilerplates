@@ -1,13 +1,9 @@
 // module imports
-import dotenv from 'dotenv';
-
-// file imports
-import { ENVIRONMENTS } from './enums';
-
-// destructuring assignments
-const { PRODUCTION, STAGING } = ENVIRONMENTS;
+import * as dotenv from 'dotenv';
 
 dotenv.config();
-dotenv.config({
-  path: process.env.NODE_ENV === PRODUCTION ? '.env.production' : process.env.NODE_ENV === STAGING ? '.env.staging' : '.env.development',
-});
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+
+// dotenv.config({
+//     path: process.env.NODE_ENV === 'production' ? '.env.production' : process.env.NODE_ENV === 'staging' ? '.env.staging' : '.env.development',
+// });

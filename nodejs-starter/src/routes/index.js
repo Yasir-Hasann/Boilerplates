@@ -1,12 +1,9 @@
 // module imports
-const express = require('express');
+const router = require('express').Router();
 
 // file imports
-const namesRoutes = require('./nameRoutes');
+const nameRoutes = require('./nameRoutes');
 
-// variable initializations
-const router = express.Router();
-
-router.use('/data', namesRoutes);
+router.use('/data', nameRoutes);
 
 module.exports = router;
