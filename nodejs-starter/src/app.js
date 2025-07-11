@@ -21,8 +21,8 @@ app.use('/api/v1', apiRouter);
 app.use('/ping', (req, res) => {
   res.status(200).json({ success: true, message: 'Bro: I am live and working' });
 });
-app.all('/{*splat}', (req, res) => {
-  res.status(400).json({ success: false, message: 'Invalid URL' });
+app.use((req, res) => {
+  res.status(404).json({ success: false, message: 'Invalid URL' });
 });
 app.use(errorHandler);
 

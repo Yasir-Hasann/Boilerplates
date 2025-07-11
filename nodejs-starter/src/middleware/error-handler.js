@@ -1,7 +1,7 @@
 // file imports
 const ErrorResponse = require('../utils/error-response');
 
-const Error = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
@@ -32,4 +32,4 @@ const Error = (err, req, res, next) => {
   });
 };
 
-module.exports = Error;
+module.exports = errorHandler;

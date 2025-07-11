@@ -10,11 +10,13 @@
     "copy-files": "copyfiles -u 1 src/public/*.* dist/",
     "build": "npm run clean && npx tsc && npm run copy-files",
     "build:start": "npm run build && npm run start",
-    "prepare": "husky",
+    "prepare": "husky install",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "fix": "npm run format && npm run lint:fix && npm run lint"
+
   },
   "keywords": [
     "nodejs",
@@ -61,8 +63,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
-      "eslint --fix"
+      "npm run fix"
     ]
   }
 }
