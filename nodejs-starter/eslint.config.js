@@ -11,24 +11,12 @@ module.exports = [
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'script',
-      globals: {
-        ...globals.node,
-        ...globals.commonjs,
-      },
+      globals: { ...globals.node },
     },
-    plugins: {
-      js,
-      prettier: prettierPlugin,
-    },
+    plugins: { js, prettier: prettierPlugin },
     rules: {
       ...js.configs.recommended.rules,
       ...prettierRecommended.rules,
-      'prettier/prettier': 'error',
-      'no-console': 'off',
-      'no-path-concat': 'error',
-      'no-buffer-constructor': 'error',
-      'prefer-const': 'error',
-      'no-var': 'error',
       'no-unused-vars': ['error', { argsIgnorePattern: '^(_|req|res|next)$' }],
     },
   },
