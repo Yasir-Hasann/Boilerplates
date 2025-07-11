@@ -13,6 +13,8 @@ let a = '122';
 a = 13;
 const b = 133;
 let c = 1444;
+const d = 'dsfsdfsdf';
+d = 1212;
 
 app.listen(port, () => {
   console.log(`🚀 Server is running on port: ${port}`);
