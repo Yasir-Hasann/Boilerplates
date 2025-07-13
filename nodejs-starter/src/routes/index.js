@@ -1,9 +1,6 @@
 // module imports
 const router = require('express').Router();
 
-// file imports
-const nameRoutes = require('./nameRoutes');
-
-router.use('/data', nameRoutes);
+router.use('/user', require('./user'));
 
 module.exports = router;

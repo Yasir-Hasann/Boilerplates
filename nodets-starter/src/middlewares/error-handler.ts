@@ -2,7 +2,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 // file imports
-import ErrorResponse from '../utils/error-response.js';
+import ErrorResponse from '@utils/error-response.js';
 
 const errorHandler = (err: any, req: Request, res: Response<{ success: boolean; error: string }>, next: NextFunction) => {
   let error: ErrorResponse = { ...err };

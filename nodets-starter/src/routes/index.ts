@@ -2,11 +2,11 @@
 import { Router } from 'express';
 
 // file imports
-import nameRoutes from './nameRoutes.js';
+import user from './user.js';
 
-// variable initialization
+// variable initializations
 const router = Router();
 
-router.use('/data', nameRoutes);
+router.use('/user', user);
 
 export default router;
