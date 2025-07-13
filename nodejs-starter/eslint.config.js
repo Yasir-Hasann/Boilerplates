@@ -17,7 +17,7 @@ module.exports = [
     rules: {
       ...js.configs.recommended.rules,
       ...prettierRecommended.rules,
-      'no-unused-vars': ['error', { argsIgnorePattern: '^(_|req|res|next)$' }],
+      'no-unused-vars': ['error', { argsIgnorePattern: '^(_|req|res|next)' }],
     },
   },
 ];
