@@ -17,7 +17,7 @@ export default [
     plugins: { '@typescript-eslint': tsPlugin, prettier: prettierPlugin },
     rules: {
       ...prettierPlugin.configs.recommended.rules,
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|req|res|next)$' }],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|req|res|next)' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       'prettier/prettier': 'error',
